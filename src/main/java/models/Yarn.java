@@ -1,8 +1,8 @@
 package models;
 
-public class Yarn {
+public class Yarn implements YarnDTO{
 
-    private int yarnID;
+    private int yarnId;
     private String brand;
     private String color;
     private String fiberType;
@@ -19,8 +19,8 @@ public class Yarn {
         this.color = color;
     }
 
-    public Yarn(int yarnID, String brand, String color, String fiberType, String weight, Integer yardage, Double price, Integer quantity) {
-        this.yarnID = yarnID;
+    public Yarn(Integer yarnID, String brand, String color, String fiberType, String weight, Integer yardage, Double price, Integer quantity) {
+        this.yarnId = yarnID;
         this.brand = brand;
         this.color = color;
         this.fiberType = fiberType;
@@ -30,12 +30,13 @@ public class Yarn {
         this.quantity = quantity;
     }
 
-    public int getYarnID() {
-        return yarnID;
+    @Override
+    public int getId() {
+        return yarnId;
     }
 
-    public void setYarnID(int yarnID) {
-        this.yarnID = yarnID;
+    public void setYarnId(int yarnId) {
+        this.yarnId = yarnId;
     }
 
     public String getBrand() {
@@ -92,6 +93,20 @@ public class Yarn {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Yarn{" +
+                "yarnId=" + yarnId +
+                ", brand='" + brand + '\'' +
+                ", color='" + color + '\'' +
+                ", fiberType='" + fiberType + '\'' +
+                ", weight='" + weight + '\'' +
+                ", yardage=" + yardage +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                "}\n";
     }
 }
 

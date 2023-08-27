@@ -1,6 +1,5 @@
 package daos;
 
-import com.sun.jdi.connect.Connector;
 import database.ConnectionFactory;
 import models.Yarn;
 
@@ -13,7 +12,7 @@ public class YarnStuff implements YarnDao {
     public Yarn getYarnResultSet(ResultSet rs) throws SQLException {
 
         Yarn yarn = new Yarn();
-        yarn.setYarnID(rs.getInt("YarnID"));
+        yarn.setYarnId(rs.getInt("YarnID"));
         yarn.setBrand(rs.getString("Brand"));
         yarn.setColor(rs.getString("Color"));
         yarn.setPrice(rs.getDouble("Price"));
